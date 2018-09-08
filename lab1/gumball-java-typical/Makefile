@@ -1,11 +1,11 @@
-#all: clean
+all: clean
 
-#clean:
+clean:
     find . -name "*.class" -exec rm -rf {} \;
     find . -name "*__SHELL*.java" -exec rm -f {} \;
 
-#compile:
+compile:
     javac *.java
 
-#run:
+run:
     java Main
