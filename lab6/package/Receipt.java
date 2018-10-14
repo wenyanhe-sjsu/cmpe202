@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 public class Receipt
 {
@@ -15,13 +16,27 @@ public class Receipt
 
     public void printout()
     {
+        double sum = 0.0;
+        DecimalFormat fmt = new DecimalFormat("0.00");
+        
+        System.out.println("                 FIVE GUYS");
+        System.out.println("             BURGERS AND FRIES");
+        System.out.println("              STORE # CA-1294");
+        System.out.println("            5353 ALMADEN EXPY N60");
+        System.out.println("             SAN JOSE, CA 95118");
+        System.out.println("              (P) 408-264-9300\n\n");
+        System.out.println("            12/1/2016 1:46:54 PM\n");
+        System.out.println("                 FIVE GUYS");
+        System.out.println("Order numer:       45\n");
+        
         for (Component obj : components)
         {
+            sum += obj.getUnitPrice() * obj.getCount();
             if (obj.getName().contains("LBB"))
             {
-                System.out.println( 1 + "    " + obj.getName() +
+                System.out.println( obj.getCount() + "    " + obj.getName() +
                     "                              " +
-                    5.59);
+                    (obj.getCount() * obj.getUnitPrice()));
 
                 for (Component obj1 : obj.getComponents())
                 {
@@ -39,9 +54,9 @@ public class Receipt
                 
             if (obj.getName().contains("LTL"))
             {
-                System.out.println( 1 + "  " + obj.getName() +
+                System.out.println( obj.getCount() + "  " + obj.getName() +
                     "                            " +
-                    2.79);
+                    (obj.getCount() * obj.getUnitPrice()));
                     
                 for (Component obj1 : obj.getComponents())
                 {
@@ -49,5 +64,8 @@ public class Receipt
                 }
             }
         }
+        
+        System.out.println("   " + "Sub. Total:" + "                       $"
+            + fmt.format(sum));
     }
 }

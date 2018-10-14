@@ -31,7 +31,17 @@ public class Leaf implements Component {
 
     public String getName()
     {
-        return description;  // no implementation
+        return description;
+    }
+    
+    public double getUnitPrice()
+    {
+        return 0.0;  // free of charge
+    }
+    
+    public int getCount()
+    {
+        return 1;
     }
 
     public void addChild(Component c) {

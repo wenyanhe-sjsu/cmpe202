@@ -24,8 +24,6 @@ public class BuildOrder {
         Fry fry = new Fry("LTL CAJ", 2.79, 1);
         // Add fries to the order
         order.addChild( fry );
-        order.addChild(new Leaf("Crispy Onion Strings", 5.50 ));
-        order.addChild(new Leaf("The Purist", 8.00 ));
 
         
         return order ;

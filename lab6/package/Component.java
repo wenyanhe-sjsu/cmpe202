@@ -8,5 +8,7 @@ public interface Component {
      Component getChild(int i);
      ArrayList<Component> getComponents();
      String getName();
+     double getUnitPrice();
+     int getCount();
 }
  

@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
-public class Receipt
+public class PackingSlip
 {
     private ArrayList<Component> components = new ArrayList<Component>();
 
-    public Receipt( Component c )
+    public PackingSlip( Component c )
     {
         /* for (int i = 0; i < c.getComponents().size(); i++)
         {
@@ -12,18 +12,26 @@ public class Receipt
         } */
         components = c.getComponents();
     }
+      
 
     public void printout()
     {
+        System.out.println("\n\n\n");
+        System.out.println("Patties - 1\n\n");
+        System.out.println("Order number:  45\n");
+        System.out.println("          12/1/2016 1:46:54 PM");
+        System.out.println("              FIVE GUYS\n");
+        System.out.println("Sandwich#  1");
+        
         for (Component obj : components)
         {
             if (obj.getName().contains("LBB"))
             {
-                System.out.println( 1 + "    " + obj.getName() +
-                    "                              " +
-                    5.59);
+                System.out.println( obj.getCount() + "      " + obj.getName() );
 
-                for (Component obj1 : obj.getComponents())
+                ArrayList<Component> alc = obj.getComponents();
+                alc.add(alc.remove(0));
+                for (Component obj1 : alc)
                 {
                     if (obj1.getName().contains("BACON"))
                         System.out.println("      " + "{{{{ BACON }}}}");
@@ -39,9 +47,7 @@ public class Receipt
                 
             if (obj.getName().contains("LTL"))
             {
-                System.out.println( 1 + "  " + obj.getName() +
-                    "                            " +
-                    2.79);
+                System.out.println( obj.getCount() + "    " + obj.getName() );
                     
                 for (Component obj1 : obj.getComponents())
                 {
@@ -49,5 +55,8 @@ public class Receipt
                 }
             }
         }
+        
+        System.out.println("Register: 1" + "          " + "Tran Seq No:  57845");
+        System.out.println("Cashier: Sakda* S");
     }
 }

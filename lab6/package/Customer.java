@@ -5,8 +5,9 @@ public class Customer
         Component theOrder = BuildOrder.getOrder() ;
         Receipt receipt = new Receipt(theOrder);
         receipt.printout();
-        // PackingSlip slip = new PackingSlip(theOrder);
-        // slip.printout();
+        System.out.println("\n\n\n");
+        PackingSlip slip = new PackingSlip(theOrder);
+        slip.printout();
 
     }
 }
