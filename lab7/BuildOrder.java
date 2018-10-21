@@ -4,7 +4,7 @@ public class BuildOrder {
     {
         Composite order = new Composite( "Order" );
         
-        CustomBurger customBurger1 = new CustomBurger( "Build Your Own Burger" );
+        CustomBurger customBurger = new CustomBurger( "Build Your Own Burger" );
         
         Burger b = new Burger( "Burger Options" );
         String[] bo = { "Organic Bison*", "1/2lb.", "On A Bun" };
@@ -45,18 +45,18 @@ public class BuildOrder {
         side.setOptions( sdo );
         side.wrapDecorator( bun );
 
-        customBurger1.setDecorator( side ) ;
-        customBurger1.addChild( b );
-        customBurger1.addChild( c );
-        customBurger1.addChild( pc );
-        customBurger1.addChild( s );
-        customBurger1.addChild( t );
-        customBurger1.addChild( pt );
-        customBurger1.addChild( bun );
-        customBurger1.addChild( side );
+        customBurger.setDecorator( side ) ;
+        customBurger.addChild( b );
+        customBurger.addChild( c );
+        customBurger.addChild( pc );
+        customBurger.addChild( s );
+        customBurger.addChild( t );
+        customBurger.addChild( pt );
+        customBurger.addChild( bun );
+        customBurger.addChild( side );
         
         // Add Custom Burger to the Order
-        order.addChild( customBurger1 );        
+        order.addChild( customBurger );        
         
         CustomBurger customBurger2 = new CustomBurger( "Build Your Own Burger" );
         
