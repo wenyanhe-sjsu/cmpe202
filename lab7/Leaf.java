@@ -20,7 +20,7 @@ public class Leaf implements Component {
     
     public void printDescription() {
         DecimalFormat fmt = new DecimalFormat("0.00");
-        System.out.println( " " + description + " " + fmt.format(price) ) ;
+        System.out.println( description + " " + fmt.format(price) ) ;
     }
 
     public void addChild(Component c) {

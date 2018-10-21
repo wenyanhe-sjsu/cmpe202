@@ -16,6 +16,7 @@ public class Composite implements Component {
         for (Component obj  : components)
         {
             obj.printDescription();
+            System.out.println("\n");
         }
     }
 

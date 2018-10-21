@@ -56,9 +56,7 @@ public class BuildOrder {
         customBurger1.addChild( side );
         
         // Add Custom Burger to the Order
-        order.addChild( customBurger1 );
-        System.out.println("\n");
-        
+        order.addChild( customBurger1 );        
         
         CustomBurger customBurger2 = new CustomBurger( "Build Your Own Burger" );
         
@@ -73,8 +71,8 @@ public class BuildOrder {
         
         PremiumCheese pc2 = new PremiumCheese( "Premium Cheese Options" );
         String[] pco2 = { "Fresh Mozzarella" };
-        pc.setOptions( pco );
-        pc.wrapDecorator( c );
+        pc2.setOptions( pco2 );
+        pc2.wrapDecorator( c2 );
         
         Sauce s2 = new Sauce( "Sauce Options" );
         String[] so2 = { "Habanero Salsa" };

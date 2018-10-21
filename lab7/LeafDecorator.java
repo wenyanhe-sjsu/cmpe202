@@ -31,7 +31,7 @@ public abstract class LeafDecorator extends Leaf implements PriceDecorator
         
     @Override
     public void printDescription() {
-        System.out.println( "    " + getDescription() ) ;
+        System.out.println( getDescription() ) ;
     }
     
     
