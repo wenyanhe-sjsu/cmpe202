@@ -1,15 +1,14 @@
 /* (c) Copyright 2018 Paul Nguyen. All Rights Reserved */
+package lab8;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 {
-
 	private IKeyEventHandler nextHandler ;
 	private String date = "" ;
 	private SetCharsDecorator scd = new SetCharsDecorator();
-	final int spacer = 2;
 	
 	private ArrayList<IObserver> observer = new ArrayList<IObserver>() ;
 
@@ -27,18 +26,11 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 	public void key(String ch, int cnt) {
 		if ( cnt >= 17 && cnt <= 20  ) {
 			if ((ch.charAt(0) == 'X') || ch.equals("Delete")) {
-				date = scd.delSpace(date, "/");
+				date = scd.delChar(date, "/");
 				cnt--;
 			} else {
 				date += ch ;
-				date = scd.addChar(date, '/', spacer);
-			}
-			
-			if (cnt == 20) {
-				if (!chkDate(date)) {
-					observer.get(0).update(16);
-					date = "";
-				}
+				date = scd.addChar4Exp(date, '/');
 			}
 		} else if ( nextHandler != null ) {
 			nextHandler.key(ch, cnt) ;

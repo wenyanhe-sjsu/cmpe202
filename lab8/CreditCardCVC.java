@@ -1,4 +1,5 @@
 /* (c) Copyright 2018 Paul Nguyen. All Rights Reserved */
+package lab8;
 
 public class CreditCardCVC implements IDisplayComponent, IKeyEventHandler
 {
@@ -19,9 +20,10 @@ public class CreditCardCVC implements IDisplayComponent, IKeyEventHandler
 
 	public void key(String ch, int cnt) {
 		if ( cnt >= 21 ) {
+			System.out.println("SUN: " + cnt);
 			if ( cnt >= 21 && cnt <= 23 ) {
 				if ((ch.charAt(0) == 'X') || ch.equals("Delete")) {
-					cvc = scd.delSpace(cvc, "A");
+					cvc = cvc.substring(0, cvc.length() - 1);
 				} else {
 					cvc += ch ;
 				}

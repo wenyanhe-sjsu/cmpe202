@@ -1,4 +1,5 @@
 /* (c) Copyright 2018 Paul Nguyen. All Rights Reserved */
+package lab8;
 
 public interface IScreen
 {

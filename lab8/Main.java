@@ -8,6 +8,7 @@
     ref: https://docs.oracle.com/javase/7/docs/api/java/io/Console.html
 
 */
+package lab8;
 
 import java.io.Console ;
 import java.util.Scanner;
@@ -17,9 +18,8 @@ class Main
 {
     public static void main(String args[]) {
     	String pattern = "\\d|X|Delete";
-    	boolean isMatch;
+    	boolean patternMatch;
         App app = new App() ;
-        app.getCreditCardExp().addObserver(app);
         //Console c = System.console() ;
         Scanner sca = new Scanner(System.in);
         for (;;) {
@@ -29,16 +29,11 @@ class Main
             System.out.print( "Key (Digit or X or Delete) => " ) ;
             //String ch = c.readLine() ;
             String ch = sca.nextLine();
+            ch = ch.toUpperCase();
             ch = ch.replaceAll("\\s","") ;
-            if ((ch.equals("q")) || (ch.equals("quit"))) {
-                /* entering q or quite to exit without case sensitive */
-                System.exit(0);
-            }
             
-            isMatch = Pattern.matches(pattern, ch);
-            if (!isMatch) {
-            	System.err.println("Input format error!");
-            	
+            patternMatch = Pattern.matches(pattern, ch);
+            if (!patternMatch) {
             	continue;
             }
             

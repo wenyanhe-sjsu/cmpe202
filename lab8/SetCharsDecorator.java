@@ -1,37 +1,35 @@
+package lab8;
 
 public class SetCharsDecorator implements CardDecorator {
-	private int loopNum;
-	private int boundary;
+	private int i;
+	private int limit;
 	private int offset;
-	private StringBuilder sb;
 	
 	public SetCharsDecorator() {
-		loopNum = 0;
+		i = 0;
 		offset = 0;
 	}
 	
-	public String addChar(String x, char ch, int len) {
-		x = x.replaceAll(ch + "", "");
-		StringBuilder sb = new StringBuilder(x);
+	public String addChar4Card(String s, char ch) {
 		
-		boundary = sb.length() / len;
-		if (x.length() == boundary * len) {
-			boundary--;
+		if ((s.length() == 4)|| (s.length() == 9) || (s.length() == 14)) {
+			s = s + ch;
 		}
 		
-		for (loopNum = 0; loopNum < boundary; loopNum++) {
-			System.err.println("len: " + sb.length() + " loop: " + (sb.length() / len));
-			sb.insert(offset + len, ch);
-			offset = offset + len + 1; 
+		return s;
+	}
+	
+	@Override
+	public String addChar4Exp(String s, char ch) {
+		if (s.length() == 2) {
+			s = s + ch;
 		}
 		
-		offset = 0;
-		
-		return sb + "";
+		return s;
 	}
 
 	@Override
-	public String delSpace(String x, String y) {
+	public String delChar(String x, String y) {
 		StringBuilder sb = new StringBuilder(x);
 		if (sb.indexOf(y) != -1) {
 			if (sb.charAt(sb.length() - 2) == y.charAt(0)) {

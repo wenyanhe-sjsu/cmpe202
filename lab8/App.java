@@ -1,9 +1,9 @@
 /* (c) Copyright 2018 Paul Nguyen. All Rights Reserved */
-
+package lab8;
 /**
  *  Main App Class for Displaying Screen.
  */
-public class App implements IObserver{
+public class App {
 
     private Screen screen;
     private CreditCardNum num;
@@ -39,27 +39,23 @@ public class App implements IObserver{
     }
 
     public void key(String ch) {
-    	if (ch.charAt(0) != 'X') { 
-    		count++;
+    	if ((count >= 0 && count <= 23)) {
+    		if (ch.charAt(0) != 'X') {
+    			count++;
+    		}
+    	
+    		screen.key(ch, count);
     	}
     	
-        screen.key(ch, count);
-        
         if (ch.charAt(0) == 'X') { 
     		count--;
-    	}
+    	}   
         
+        System.out.println("Flag:" + count);
     }
     
     public CreditCardExp getCreditCardExp () {
     	return exp;
     }
-
-	@Override
-	public void update(int x) {
-		count = x;
-	}
-
-
 }
 
