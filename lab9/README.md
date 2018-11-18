@@ -15,11 +15,12 @@
     }
 
     ```
-Accordingly, in the Tester class, the runTest method has to be modified to accommodate this extra parameter.
+    Accordingly, in the Tester class, the runTest method has to be modified to accommodate this extra parameter.
     ```
     Component obj = new ConcreteDecorator( "h1", new ConcreteDecorator(
         "em", new ConcreteComponent() ) );
     ```
+
 3. The *addedBehavior* method of ConcreteDecorator class uses a lambda expression.
     ```
     private String addedBehavior(String in) {
@@ -28,4 +29,5 @@ Accordingly, in the Tester class, the runTest method has to be modified to accom
         return taggedContent.addTag(this.tag, addedState);
     }
     ```
+
 4. If another decorator appears subsequently that looks very different from ConcreteDecoratorA and ConcreteDecoratorB, in all likelihood ConcreteDecorator no longer suffices.  In that case, defining a second lambda expression may be warranted.
