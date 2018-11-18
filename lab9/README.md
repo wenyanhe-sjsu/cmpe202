@@ -21,3 +21,10 @@ Accordingly, in the Tester class, the runTest method has to be modified to accom
         "em", new ConcreteComponent() ) );
 ```
 3. The *addedBehavior* method of ConcreteDecorator class uses a lambda expression.
+```
+    private String addedBehavior(String in) {
+        Lambda taggedContent = (tag, str) -> "<" + tag + ">" + str + "</" + tag
+            + ">";
+        return taggedContent.addTag(this.tag, addedState);
+    }
+```
