@@ -19,7 +19,6 @@
     Component obj = new ConcreteDecorator( "h1", new ConcreteDecorator(
         "em", new ConcreteComponent() ) );
     ```
-
 3. The *addedBehavior* method of ConcreteDecorator class uses a lambda expression.
     ```
     private String addedBehavior(String in) {
