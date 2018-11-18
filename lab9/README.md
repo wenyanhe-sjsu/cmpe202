@@ -13,7 +13,6 @@
         super( c ) ;
         this.tag = tag ;
     }
-
     ```
     Accordingly, in the Tester class, the runTest method has to be modified to accommodate this extra parameter.
     ```
@@ -29,5 +28,4 @@
         return taggedContent.addTag(this.tag, addedState);
     }
     ```
-
 4. If another decorator appears subsequently that looks very different from ConcreteDecoratorA and ConcreteDecoratorB, in all likelihood ConcreteDecorator no longer suffices.  In that case, defining a second lambda expression may be warranted.
