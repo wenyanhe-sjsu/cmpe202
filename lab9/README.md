@@ -27,4 +27,5 @@
         return taggedContent.addTag(this.tag, addedState);
     }
     ```
-4. If another decorator appears subsequently that looks very different from ConcreteDecoratorA and ConcreteDecoratorB, in all likelihood ConcreteDecorator no longer suffices.  In that case, defining a second lambda expression may be warranted.
+4. Component.java, ConcreteComponent.java, Decorator.java are identical to their counterpart in the original decorator solution.
+5. If another decorator appears subsequently that looks very different from ConcreteDecoratorA and ConcreteDecoratorB, in all likelihood ConcreteDecorator no longer suffices.  In that case, defining a second lambda expression may be warranted.
