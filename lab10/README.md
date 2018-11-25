@@ -6,15 +6,16 @@ presented in Lab 10 while the latter in Lab 1.
 Looking back at Lab 1, we can easily observe that the solution without
 FeatureIDE/AspectJ requires defining multiple very similar classes for a gumball
 machine itself together with many other supporting classes.  From software
-engineering perspective, this is always a bad idea as it
+engineering perspective, this is always undesirable as it
 has more code to maintain, lowers code reusability, entails more testing work,
 to name just a few drawbacks.
 
 The FeatureIDE/AspectJ solution in Lab 10, on the other hand, has much leaner
 code.  Other than minimal object-oriented programming for the very core of a
-gumball machine, the rest of the coding is done in AspectJ to account for its
-many aspects, such as its type (crank or slot), coin feed (one quarter or two),
-gumball price, etc.
+single gumball machine class, the rest of the coding is done in AspectJ to
+account for its many aspects, such as its type (crank or slot), coin feed (one
+quarter or two), gumball price, etc.  The result of this is less code and/or
+coupling.
 
 To test the solution with FeatureIDE/AspectJ, one can simply write small modules
 using AspectJ based on a certain feature model configuration.  This improves
