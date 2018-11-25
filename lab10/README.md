@@ -1,1 +1,2 @@
-![alt "model image"](https://raw.githubusercontent.com/wenyanhe-sjsu/cmpe202/master/lab10/images/model.png)
+###Feature Model
+![model image](images/model.png?raw=true "Feature Model Diagram")
