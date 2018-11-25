@@ -3,4 +3,6 @@
 
 ### Feature Model Configuration and Its Output 
 1. CRANKMODEL, ONEQTR, AND COST25
-![crankmodel, one quarter and cost == 25](images/crank25.png?raw=true)
+
+![Configuration](images/crank25.png?raw=true)
+![Configuration](images/crank25output.png?raw=true)
